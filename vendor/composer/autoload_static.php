@@ -14,6 +14,10 @@ class ComposerStaticInitf303165636639a0e9007b054fda212a2
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' =>
+        array (
+            'Tests\\' => 6,
+        ),
         'S' =>
         array (
             'Symfony\\Polyfill\\Php83\\' => 23,
@@ -24,9 +28,17 @@ class ComposerStaticInitf303165636639a0e9007b054fda212a2
         array (
             'Buki\\Router\\' => 12,
         ),
+        'A' =>
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Tests\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
         'Symfony\\Polyfill\\Php83\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php83',
@@ -42,6 +54,10 @@ class ComposerStaticInitf303165636639a0e9007b054fda212a2
         'Buki\\Router\\' =>
         array (
             0 => __DIR__ . '/..' . '/izniburak/router/src',
+        ),
+        'App\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
