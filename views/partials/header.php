@@ -1,7 +1,6 @@
 <?php
-$app     = $GLOBALS['app'];
-$user    = $app->auth->user();
-$isAdmin = $app->auth->isAdmin();
+/** @var \App\Models\User|null $user */
+/** @var bool $isAdmin */
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary-app">
     <div class="container">
@@ -13,6 +12,7 @@ $isAdmin = $app->auth->isAdmin();
         <div class="d-flex align-items-center gap-3">
 
             <?php if (!$user): ?>
+
                 <a href="/login" class="btn btn-outline-light">Connexion</a>
 
             <?php else: ?>
@@ -24,6 +24,7 @@ $isAdmin = $app->auth->isAdmin();
 
                 <?php else: ?>
                     <a href="/trips/create" class="btn btn-outline-light">Proposer un trajet</a>
+
                     <span class="text-white ms-2">
                         <?= htmlspecialchars($user['first_name'] . ' ' . $user['last_name']) ?>
                     </span>

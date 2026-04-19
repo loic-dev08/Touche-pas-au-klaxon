@@ -7,10 +7,6 @@ use App\Core\Csrf;
 use App\Core\Response;
 use App\Core\View;
 
-/**
- * AgencyController (admin)
- * CRUD agences (seul admin)
- */
 final class AgencyController
 {
     public function index(): string
@@ -20,14 +16,20 @@ final class AgencyController
         return View::render('admin/agencies/index', [
             'agencies' => $app->agencies->all(),
             'csrf'     => Csrf::token(),
+            'user'     => $app->auth->user(),
+            'isAdmin'  => $app->auth->isAdmin(),
         ]);
     }
 
     public function createForm(): string
     {
+        $app = $GLOBALS['app'];
+
         return View::render('admin/agencies/create', [
-            'csrf'   => Csrf::token(),
-            'errors' => [],
+            'csrf'     => Csrf::token(),
+            'errors'   => [],
+            'user'     => $app->auth->user(),
+            'isAdmin'  => $app->auth->isAdmin(),
         ]);
     }
 
@@ -62,8 +64,10 @@ final class AgencyController
         }
 
         return View::render('admin/agencies/edit', [
-            'agency' => $agency,
-            'csrf'   => Csrf::token(),
+            'agency'  => $agency,
+            'csrf'    => Csrf::token(),
+            'user'    => $app->auth->user(),
+            'isAdmin' => $app->auth->isAdmin(),
         ]);
     }
 

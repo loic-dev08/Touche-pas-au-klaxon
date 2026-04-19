@@ -4,16 +4,18 @@ declare(strict_types=1);
 namespace App\Controllers\Admin;
 
 use App\Core\View;
+use App\Core\Csrf;
 
-/**
- * Dashboard admin
- */
-final class DashboardController {
-    public function index(): string {
-        $app = $GLOBALS['app'];
+final class DashboardController
+{
+    public function index(): string
+    {
+        $app = $GLOBALS['app']; // OK dans un contrôleur
 
         return View::render('admin/dashboard', [
-            'user' =>$app->auth->user(),
+            'user'    => $app->auth->user(),
+            'isAdmin' => $app->auth->isAdmin(),
+            'csrf'    => Csrf::token(),
         ]);
     }
 }
