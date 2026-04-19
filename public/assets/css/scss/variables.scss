@@ -1,0 +1,25 @@
+
+// Palette imposée
+
+$brand-light :#f1f8fc;
+$brand-blue :#0074c7;
+$brand-navy : #00497c;
+$brand-gray : #384050;
+$brand-red : #cd2c2e;
+$brand-green : #82b864;
+
+// Bootsstrap overrides
+
+$primary: $brand-blue;
+$secondary: $brand-gray;
+$success: $brand-green;
+$danger: $brand-red;
+$info: $brand-light;
+$dark: $brand-navy;
+
+// Fond global
+
+$body-bg:$brand-light;
+
+
+
